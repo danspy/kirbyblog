@@ -1,0 +1,82 @@
+// Basic Settings
+$column__width: 80px;
+$gutter__width: 0px;
+$columns: 12;
+
+// Do not edit :D
+$max__width: $column__width*$columns;
+
+// Include Default Gutter
+@mixin gutter() {
+  padding-left: $gutter__width;
+  padding-right: $gutter__width;
+}
+
+// Create a 100% floated container
+@mixin row() {
+  float: left;
+  width: 100%;
+  max-width: none;
+  @include clearfix();
+}
+
+// Create cols. Optional Setting to remove default gutter @include col(x, no);
+@mixin col($i, $gutter: yes, $fw: no) {
+  @if $i <= $columns {
+    float: left;
+
+    @if $fw == no {
+      width: ((100 * $column__width * $i) / $max__width) + 0%;
+    } @else if $fw == yes {
+      width: 100%;
+    }
+
+    max-width: $column__width * $i;
+
+    @if $gutter == yes {
+      padding-left: $gutter__width;
+      padding-right: $gutter__width;
+    } @else if $gutter == no {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+  } @else {
+
+    @include row();
+
+    @if $gutter == yes {
+      padding-left: $gutter__width;
+      padding-right: $gutter__width;
+    } @else if $gutter == no {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+// Push the container by x cols
+@mixin push($i) {
+  @if $i > 0 {
+    margin-left: ((100 * $column__width * $i) / $max__width) + 0%;
+  } @else if $i < 1 {
+    margin-left: 0;
+  }
+}
+
+// Pull the container by x cols
+@mixin pull($i) {
+  @if $i > 0 {
+    margin-right: ((100 * $column__width * $i) / $max__width) + 0%;
+  } @else if $i < 1 {
+    margin-right: 0;
+  }
+}
+
+// center container
+@mixin center() {
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+  @include clearfix();
+}

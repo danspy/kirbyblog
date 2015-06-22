@@ -1,0 +1,24 @@
+$colors: (
+	primary: #ff9900,
+	white: #ffffff,
+	light_gray: #f6f6f6,
+	gray: #cccccc,
+	dark: #222222,
+);
+
+// font
+$font: 'Roboto', sans-serif;
+$font-headline: 'Roboto', sans-serif;
+
+// media queries
+$mq: (
+	xxlarge: 90.000em,
+	xlarge: 65.000em,
+	large: 64.063em,
+	medium: 48.063em,
+	small: 48.000em,
+	xsmall: 37.500em,
+	xxsmall: 25.000em,
+);
+
+$compile-IE: false;

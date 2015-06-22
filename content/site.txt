@@ -1,0 +1,17 @@
+Title: Blog
+
+----
+
+Author: Daniel Jähnichen
+
+----
+
+Description: Mein Blog ...
+
+----
+
+Keywords: 
+
+----
+
+Copyright: © 2009-(date: Year) (link: http://daniel-jaehnichen.de text: Daniel Jähnichen)
