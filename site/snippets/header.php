@@ -14,7 +14,7 @@
   <?php echo css('assets/css/main.css') ?>
 
 </head>
-<body>
+<body<?php if($page->isHomepage()) {echo ' id="homepage"';} ?>>
 
   <header id="main-header" role="banner">
     <h2<?php if($page->isHomepage()) {echo ' class="home"';} ?>><a class="logo" href="<?php echo url() ?>">Blog</a></h2>
